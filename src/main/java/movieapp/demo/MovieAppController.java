@@ -7,8 +7,11 @@ public class MovieAppController {
     @GetMapping("/")
     public String index(){
         return "index";
+    }
 
-
+    @GetMapping("/")
+    public String mia(){
+        return "mia";
     }
 
 
