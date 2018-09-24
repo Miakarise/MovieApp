@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" media="screen"/></head>
+<body>
+<div class="container">
+
+<h1>Movies</h1>
+<table class="table table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Duration</th>
+        <th>Genre</th>
+    </tr>
+    <tr th:each = "movie : ${movies}">
+        <td th:text="${movie.title}"></td>
+        <td th:text="${movie.year}"></td>
+        <td th:text="${movie.duration}"></td>
+        <td th:text="${movie.genre}"></td>
+    </tr>
+</table>
+    <div>
+
+    <a href="/create.html">
+    <button class="btn btn-primary">Create new movie</button>
+    </a>
+
+    </div>
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+</body>
+</html>
