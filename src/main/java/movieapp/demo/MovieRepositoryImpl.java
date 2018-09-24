@@ -17,7 +17,6 @@ public class MovieRepositoryImpl implements MovieRepository {
         movies.add(new Movie("title3", "2018", "actor", "descriptor"));
         movies.add(new Movie("title4", "2018", "actor", "descriptor"));
 
-
     }
 
     @Override
