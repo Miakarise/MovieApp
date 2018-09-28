@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/create}" th:object="${movie}" method="post">
+    <input type="text" placeholder="title" th:field="*{title}" /> <br />
+    <input type="text" placeholder="duration"  th:field="*{duration}" /> <br />
+    <input type="text" placeholder="genre" th:field="*{genre}" /> <br />
+
+    <input type="submit" th:value="Save" >
+</form>
+
+
+</body>
+</html>
+
+
+@PostMapping(value = "/create")
+public String create(@ModelAttribute Movie movie) {
+log.info("create post action called...");
+//model.addAttribute("movie", new Movie());
+movieService.saveMovie(movie);
+
+return "redirect:/";
+//return "index";

@@ -5,5 +5,7 @@ import java.util.List;
 public interface MovieRepository {
 
     List<Movie> findAll();
-    void create(Movie mov);
+    void save(Movie movie);
+    //Movie search(String title);
+
 }

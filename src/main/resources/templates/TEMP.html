@@ -10,7 +10,7 @@
 <div class="container">
 
     <h1>Create Movie</h1>
-    <form th:action="@{/create}" th:object="${movie}" method="Post">
+    <form action="#" th:action="@{/create}" th:object="${movie}" method="Post">
 
         <p>Enter Title</p>
         <input type="text" th:field="${movie.title}"/>
