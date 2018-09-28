@@ -1,10 +1,5 @@
 package movieapp.demo;
 
-
-import com.sun.javafx.beans.IDProperty;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-
 public class Movie {
 
 

@@ -11,11 +11,11 @@ public class MovieRepositoryImpl implements MovieRepository {
     private ArrayList<Movie> movies = new ArrayList<>();
 
     public MovieRepositoryImpl() {
-        movies.add(new Movie("BraveHeart", "1994", "234", "Drama"));
-        movies.add(new Movie("title1", "2018", "actor", "descriptor"));
-        movies.add(new Movie("title2", "2018", "actor", "descriptor"));
-        movies.add(new Movie("title3", "2018", "actor", "descriptor"));
-        movies.add(new Movie("title4", "2018", "actor", "descriptor"));
+        movies.add(new Movie("BraveHeart", "1994", "186", "Drama"));
+        movies.add(new Movie("The Predator", "2018", "107", "Action"));
+        movies.add(new Movie("The Meg", "2018", "113", "Sci-fi"));
+        movies.add(new Movie("Crazy Rich Asians", "2018", "120", "Comedy"));
+        movies.add(new Movie("Deadpool 2", "2018", "119", "Comedy"));
 
     }
 
@@ -26,20 +26,19 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     @Override
     public void save(Movie movie) {
-        movies.add(new Movie());
-        movies.add(new Movie("LOL","LOL","LOL","LOL")); //TEST!!
+        movies.add(movie);
     }
 
     /*
     @Override
     public Movie search(String title){
-            for (Movies m: movies) {
-            if(m.getMovieTitle().toLowerCase().contains(movieTitle)){
-                searchMovies.add(m);
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies[i].getTitle().contains()) {
+                return movies[i].getTitle();
             }
-            return movie;
         }
         return null;
     }
     */
+
 }

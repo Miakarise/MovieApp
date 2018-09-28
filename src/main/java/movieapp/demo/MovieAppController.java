@@ -13,10 +13,14 @@ public class MovieAppController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-
     @Autowired
     private MovieService movieService;
 
+
+    //*************** INDEX.HTML************************
+
+
+    //Index HTML
     @GetMapping("/")
     public String index(Model model){
         log.info("Index action called...");
@@ -25,6 +29,11 @@ public class MovieAppController {
         return "index";
     }
 
+
+    //*************** CREATE.HTML************************
+
+
+    //Get controller for create HTML
     @GetMapping("/create")
     public String create(Model model) {
         log.info("create action called...");
@@ -32,39 +41,33 @@ public class MovieAppController {
         return "create";
     }
 
+    //Post controller for create HTML
     @PostMapping("/create")
-    public String create(@ModelAttribute Movie movie, Model model) {
+    public String create(@ModelAttribute Movie movie) {
         log.info("create post action called...");
-        model.addAttribute("movie", new Movie("","","",""));
-        //model.addAttribute("year", new Movie());
-        //model.addAttribute("duration", new Movie());
-        //model.addAttribute("genre", new Movie());
         movieService.saveMovie(movie);
-
         return "redirect:/";
     }
-    /*
-    @RequestMapping("/create")
-    public String create(@ModelAttribute Movie movie, Model model){
-        log.info("create was called");
-        movieService.saveMovie();
-        model.addAttribute("movie", new Movie());
-        return "redirect:/";
-    }
-   */
 
 
+    //*************** SEARCH.HTML************************
 
 
-
-
-
+    //Get controller for search HTML
     @GetMapping("/search")
     public String search(Model model){
         log.info("search action called...");
-        //String searchMovie = movieService.searchMovie();
-        //model.addAttribute("Search", searchMovie);
+        model.addAttribute("title");
         return "search";
     }
+    /*
+    @PostMapping("/search")
+    public String search(@ModelAttribute Title title) {
+        log.info("search post action called...");
+        movieService.searchMovie(String title);
+
+        return "redirect:/";
+    }
+    */
 
 }
