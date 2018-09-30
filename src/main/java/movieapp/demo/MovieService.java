@@ -21,13 +21,10 @@ public class MovieService {
         moviesRepo.save(movie);
     }
 
-    /*
+
     public Movie searchMovie(String title){
-        return moviesRepo.search();
+        return moviesRepo.search(title);
     }
-
-    */
-
 
 }
 

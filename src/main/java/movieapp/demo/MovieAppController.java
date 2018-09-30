@@ -55,19 +55,21 @@ public class MovieAppController {
 
     //Get controller for search HTML
     @GetMapping("/search")
-    public String search(Model model){
+    public String search(String title, Model model){
         log.info("search action called...");
-        model.addAttribute("title");
+        model.addAttribute("title", movieService.searchMovie(title));
         return "search";
     }
+
     /*
     @PostMapping("/search")
     public String search(@ModelAttribute Title title) {
         log.info("search post action called...");
-        movieService.searchMovie(String title);
+        movieService.searchMovie(title);
 
         return "redirect:/";
     }
     */
+
 
 }

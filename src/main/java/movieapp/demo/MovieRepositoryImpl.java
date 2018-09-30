@@ -29,16 +29,17 @@ public class MovieRepositoryImpl implements MovieRepository {
         movies.add(movie);
     }
 
-    /*
+
     @Override
     public Movie search(String title){
         for (int i = 0; i < movies.size(); i++) {
-            if (movies[i].getTitle().contains()) {
-                return movies[i].getTitle();
+            if (movies.get(i).getTitle().contains(title))
+            {
+                return movies.get(i);
             }
         }
         return null;
     }
-    */
+
 
 }
