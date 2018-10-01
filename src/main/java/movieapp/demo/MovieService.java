@@ -22,12 +22,12 @@ public class MovieService {
 
     }
 
-    public void addMovie(Movie movie){
+    /*public void addMovie(Movie movie){
        moviesRepo.create();
 
     }
 
-    /*public void updateMovie(){
+    public void updateMovie(){
         for (int i = 0; i < movies.size(); i++){
             Movie m = movies.get(i);
             if (m.getMovie().equals(movies)){

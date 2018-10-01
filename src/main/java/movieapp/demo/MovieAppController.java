@@ -27,7 +27,7 @@ public class MovieAppController {
         model.addAttribute("movies", movies);
         return "index";
     }
-
+/*
     @GetMapping("/create")
     public String create(Model model) {
         log.info("create action called...");
@@ -44,7 +44,7 @@ public class MovieAppController {
         model.addAttribute("movie", movieService.getAllMovies());
 
         return "redirect:/";
-    }
+    }*/
 
 
 
