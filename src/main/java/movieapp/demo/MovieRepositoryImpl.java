@@ -27,7 +27,7 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     @Override
     public void save(Movie movie) {
-        //movie.setId(); = movies.get(movies.size()+1);
+        movie.setId(movies.size() + 1);  //Set ID + 1 ift. .size, ved tilføjelse af nye film.
         movies.add(movie);
     }
 

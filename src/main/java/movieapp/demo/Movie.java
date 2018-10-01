@@ -8,12 +8,13 @@ public class Movie {
     private String duration;
     private String genre;
 
-    public Movie(){
 
+    public Movie(){
     }
 
-    public Movie(int id, String title, String year, String duration, String genre) {
-        this.id = id;
+
+    public Movie(int id,String title, String year, String duration, String genre) {
+        this.id=id;
         this.title = title;
         this.year = year;
         this.duration = duration;
@@ -21,13 +22,12 @@ public class Movie {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-
 
     public String getTitle() {
         return title;
