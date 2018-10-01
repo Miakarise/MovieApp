@@ -2,7 +2,7 @@ package movieapp.demo;
 
 public class Movie {
 
-
+    private int id;
     private String title;
     private String year;
     private String duration;
@@ -12,12 +12,22 @@ public class Movie {
 
     }
 
-    public Movie(String title, String year, String duration, String genre) {
+    public Movie(int id, String title, String year, String duration, String genre) {
+        this.id = id;
         this.title = title;
         this.year = year;
         this.duration = duration;
         this.genre = genre;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getTitle() {
         return title;

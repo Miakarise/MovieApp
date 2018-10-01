@@ -20,10 +20,11 @@ public class MovieAppController {
     //*************** INDEX.HTML************************
 
 
-    //Index HTML
+    //Index.HTML
     @GetMapping("/")
     public String index(Model model){
         log.info("Index action called...");
+
         List<Movie> movies = movieService.getAllMovies();
         model.addAttribute("movies", movies);   //"movies" er nøglen i HTML!!
         return "index";
@@ -33,18 +34,20 @@ public class MovieAppController {
     //*************** CREATE.HTML************************
 
 
-    //Get controller for create HTML
+    //Get controller for create.HTML
     @GetMapping("/create")
     public String create(Model model) {
         log.info("create action called...");
-        model.addAttribute("movie", new Movie("","","",""));  //"movie" er nøglen i HTML!!
+
+        model.addAttribute("movie", new Movie());  //"movie" er nøglen i HTML!!
         return "create";
     }
 
-    //Post controller for create HTML
+    //Post controller for create.HTML
     @PostMapping("/create")
     public String create(@ModelAttribute Movie movie) {
         log.info("create post action called...");
+
         movieService.saveMovie(movie);
         return "redirect:/";
     }
@@ -53,23 +56,12 @@ public class MovieAppController {
     //*************** SEARCH.HTML************************
 
 
-    //Get controller for search HTML
+    //Get controller for search.HTML
     @GetMapping("/search")
     public String search(String title, Model model){
         log.info("search action called...");
+
         model.addAttribute("title", movieService.searchMovie(title));
         return "search";
     }
-
-    /*
-    @PostMapping("/search")
-    public String search(@ModelAttribute Title title) {
-        log.info("search post action called...");
-        movieService.searchMovie(title);
-
-        return "redirect:/";
-    }
-    */
-
-
 }

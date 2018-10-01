@@ -10,7 +10,7 @@
 <div class="container">
 
     <h1>Search Movie</h1>
-    <form th:action="@{/search}" th:object="${title}" method="Get">
+    <form th:action="@{/search}" th:object="${search}" method="get">
 
         <p>Enter Title</p>
         <input type="text" th:field="${title.title}"/>

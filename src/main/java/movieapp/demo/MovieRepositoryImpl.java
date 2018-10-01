@@ -10,12 +10,13 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     private ArrayList<Movie> movies = new ArrayList<>();
 
+
     public MovieRepositoryImpl() {
-        movies.add(new Movie("BraveHeart", "1994", "186", "Drama"));
-        movies.add(new Movie("The Predator", "2018", "107", "Action"));
-        movies.add(new Movie("The Meg", "2018", "113", "Sci-fi"));
-        movies.add(new Movie("Crazy Rich Asians", "2018", "120", "Comedy"));
-        movies.add(new Movie("Deadpool 2", "2018", "119", "Comedy"));
+        movies.add(new Movie(1,"BraveHeart", "1994", "186", "Drama"));
+        movies.add(new Movie(2,"The Predator", "2018", "107", "Action"));
+        movies.add(new Movie(3,"The Meg", "2018", "113", "Sci-fi"));
+        movies.add(new Movie(4,"Crazy Rich Asians", "2018", "120", "Comedy"));
+        movies.add(new Movie(5,"Deadpool 2", "2018", "119", "Comedy"));
 
     }
 
@@ -26,6 +27,7 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     @Override
     public void save(Movie movie) {
+        //movie.setId(); = movies.get(movies.size()+1);
         movies.add(movie);
     }
 
